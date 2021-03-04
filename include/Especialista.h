@@ -28,7 +28,7 @@ class Especialista{
         bool getValidado();
         void setValidado(bool);
         void setcodEsp(int);
-        void Listar_Especialista(int );
+        void Listar_Especialista();
         void Mostrar_Especialista(int );
         void Modificar_Especialista();
 };

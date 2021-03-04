@@ -156,3 +156,82 @@ void Especialista :: Mostrar_Especialista(int c){
     system("pause");
     system("cls");
 }
+
+void Especialista :: Listar_Especialista(){
+    FILE *rv;
+    rv = fopen( "especialistas.txt", "r" );
+    fseek( rv, 0, SEEK_END );
+    if (ftell( rv ) == 0 )
+    {
+        cout<<"\n\n\t\tArchivo vacio"<<endl;
+    }
+    else{
+        ifstream listarEsp;
+        int A[100],i=0,cant,pos,aux;
+        int B[100];
+        listarEsp.open("especialistas.txt",ios::in);
+        if(listarEsp.is_open()){
+            listarEsp>>Id_Esp;
+            while(!listarEsp.eof()){
+                listarEsp>>Nombre>>Apellido>>Cod_Esp>>DNI>>Genero>>ocupacion>>Telefono>>Correo>>Direccion>>Contrasena;
+                A[i]=Id_Esp;
+                listarEsp>>Id_Esp;
+                i++;
+            }
+        }
+        else{
+            cout<<"\n\n\t\tNo se ha encontrado el archivo..."<<endl;
+            system("pause");
+            system("cls");
+        }
+        cant=i;
+        listarEsp.close();
+        //insercion
+        for(int i=0;i<cant;i++){
+            pos=i;
+            aux=A[i];
+            while((pos>0)&&(A[pos-1]>aux)){
+                A[pos]=A[pos-1];
+                pos--;
+            }
+            A[pos]=aux;
+        }
+        i=0;
+        int jm=0;
+        do{
+            listarEsp.open("especialistas.txt",ios::in);
+            if(listarEsp.is_open()){
+                listarEsp>>Id_Esp;
+                while(!listarEsp.eof()){
+                    listarEsp>>Nombre>>Apellido>>Cod_Esp>>DNI>>Genero>>ocupacion>>Telefono>>Correo>>Direccion>>Contrasena;
+                    if(Id_Esp==A[i]){
+                        jm++;
+                        cout<<"\n\t\t\t         Especialista "<<jm<<"     ";
+                        cout<<"\n\t\t\t----------------------------------"<<endl;
+                        cout<<"\n\t\tIdentificacion del Especialista: "<<Id_Esp<<endl;
+                        cout<<"\n\t\tNombre del Especialista: "<<Nombre<<endl;
+                        cout<<"\n\t\tApellido del Especialista: "<<Apellido<<endl;
+                        cout<<"\n\t\tCodigo del Especialista: "<<Cod_Esp<<endl;
+                        cout<<"\n\t\tDNI del Especialista: "<<DNI<<endl;
+                        cout<<"\n\t\tGenero del Especialista: "<<Genero<<endl;
+                        cout<<"\n\t\tOcupacion del Especialista: "<<ocupacion<<endl;
+                        cout<<"\n\t\tTelefono del Especialista: "<<Telefono<<endl;
+                        cout<<"\n\t\tCorreo del Especialista: "<<Correo<<endl;
+                        cout<<"\n\t\tDireccion del Especialista: "<<Direccion<<endl;
+                        cout<<"\n\t\tContraseña del Especialista: "<<Contrasena<<endl<<endl;
+                    }
+                    listarEsp>>Id_Esp;
+                }
+            }
+            else{
+                cout<<"\n\t\tNo se ha encontrado el archivo...";
+            }
+            i++;
+            listarEsp.close();
+        }while(i!=cant);
+    }
+    system("pause");
+    system("cls");
+}
+
+

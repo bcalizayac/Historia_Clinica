@@ -85,6 +85,7 @@ int main()
                         }
                         break;
                     case 2:
+                        ObjEsp.Listar_Especialista();
                         break;
                     case 3:
                         int ide;

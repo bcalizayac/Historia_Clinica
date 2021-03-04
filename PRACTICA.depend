@@ -161,7 +161,7 @@
 	<fstream>
 	"Especialista.h"
 
-1614872010 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\src\enfermero.cpp
+1614872438 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\src\enfermero.cpp
 	"Enfermero.h"
 	<fstream>
 	<string>
@@ -175,7 +175,7 @@
 	<string.h>
 	<iostream>
 
-1614830264 c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\include\especialista.h
+1614875225 c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\include\especialista.h
 	<fstream>
 	<string>
 	<string.h>
@@ -226,7 +226,7 @@
 	<fstream>
 	"Historia_Clinica.h"
 
-1614872260 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\main.cpp
+1614875196 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\main.cpp
 	<iostream>
 	"Paciente.h"
 	"Enfermero.h"
@@ -242,7 +242,7 @@
 	"Especialista.h"
 	<iostream>
 
-1614871986 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\src\medico.cpp
+1614872447 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\src\medico.cpp
 	"Medico.h"
 	<fstream>
 	<string>
