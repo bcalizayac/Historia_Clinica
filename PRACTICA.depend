@@ -1,0 +1,163 @@
+# depslib dependency file v1.0
+1614649657 source:c:\users\ideapad\desktop\practica\main.cpp
+	<iostream>
+	"Paciente.h"
+	"Enfermero.h"
+	"Especialista.h"
+	<string>
+	<string.h>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614652439 source:c:\users\ideapad\desktop\practica\src\historia_clinica.cpp
+	"Historia_Clinica.h"
+	<fstream>
+	"Paciente.h"
+	<string>
+	<string.h>
+	<iostream>
+
+1614546539 c:\users\ideapad\desktop\practica\include\historia_clinica.h
+	<iostream>
+	<string>
+	<fstream>
+
+1614544033 c:\users\ideapad\desktop\practica\include\paciente.h
+	<string>
+	<iostream>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614652439 source:c:\users\ideapad\desktop\practica\src\paciente.cpp
+	"Paciente.h"
+	<string>
+	<string.h>
+	<iostream>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614652864 source:c:\users\ideapad\desktop\practica\src\enfermero.cpp
+	"Enfermero.h"
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614649594 c:\users\ideapad\desktop\practica\include\enfermero.h
+	"Especialista.h"
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614646758 c:\users\ideapad\desktop\practica\include\especialista.h
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614652967 source:c:\users\ideapad\desktop\practica\src\especialista.cpp
+	"Especialista.h"
+	"Enfermero.h"
+	<iostream>
+	<string>
+	<string.h>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614816968 source:c:\users\bruno\desktop\p.a\practica\main.cpp
+	<iostream>
+	"Paciente.h"
+	"Enfermero.h"
+	"Especialista.h"
+	"Medico.h"
+	"Inicio_Sesion.h"
+	<string>
+	<string.h>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614544033 c:\users\bruno\desktop\p.a\practica\include\paciente.h
+	<string>
+	<iostream>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614546539 c:\users\bruno\desktop\p.a\practica\include\historia_clinica.h
+	<iostream>
+	<string>
+	<fstream>
+
+1614649594 c:\users\bruno\desktop\p.a\practica\include\enfermero.h
+	"Especialista.h"
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614740162 c:\users\bruno\desktop\p.a\practica\include\especialista.h
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614652864 source:c:\users\bruno\desktop\p.a\practica\src\enfermero.cpp
+	"Enfermero.h"
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614792130 source:c:\users\bruno\desktop\p.a\practica\src\especialista.cpp
+	"Especialista.h"
+	"Enfermero.h"
+	<iostream>
+	<string>
+	<string.h>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614652439 source:c:\users\bruno\desktop\p.a\practica\src\historia_clinica.cpp
+	"Historia_Clinica.h"
+	<fstream>
+	"Paciente.h"
+	<string>
+	<string.h>
+	<iostream>
+
+1614652439 source:c:\users\bruno\desktop\p.a\practica\src\paciente.cpp
+	"Paciente.h"
+	<string>
+	<string.h>
+	<iostream>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614707561 source:c:\users\bruno\desktop\p.a\practica\src\medico.cpp
+	"Medico.h"
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614707562 c:\users\bruno\desktop\p.a\practica\include\medico.h
+	"Especialista.h"
+	<iostream>
+
+1614817336 source:c:\users\bruno\desktop\p.a\practica\src\inicio_sesion.cpp
+	"Inicio_Sesion.h"
+	<iostream>
+	<conio.h>
+	<string>
+	<string.h>
+	<cstdlib>
+	<iomanip>
+	<fstream>
+
+1614817038 c:\users\bruno\desktop\p.a\practica\include\inicio_sesion.h
+	<iostream>
+	<string>
+	<string.h>
+	<fstream>
+	"Especialista.h"
+
