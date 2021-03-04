@@ -132,25 +132,27 @@ void Especialista :: Mostrar_Especialista(int c){
         while(!encontrar.eof()){
             encontrar>>Nombre>>Apellido>>Cod_Esp>>DNI>>Genero>>ocupacion>>Telefono>>Correo>>Direccion>>Contrasena;
             if(Id_Esp==c){
-                cout<<"Registro encontrado..."<<endl<<endl;
-                cout<<"Identificacion del Especialista: "<<Id_Esp<<endl;
-                cout<<"Nombre del Especialista: "<<Nombre<<endl;
-                cout<<"Apellido del Especialista: "<<Apellido<<endl;
-                cout<<"Codigo del Especialista: "<<Cod_Esp<<endl;
-                cout<<"DNI del Especialista: "<<DNI<<endl;
-                cout<<"Genero del Especialista: "<<Genero<<endl;
-                cout<<"Ocupacion del Especialista: "<<ocupacion<<endl;
-                cout<<"Telefono del Especialista: "<<Telefono<<endl;
-                cout<<"Correo del Especialista: "<<Correo<<endl;
-                cout<<"Direccion del Especialista: "<<Direccion<<endl;
-                cout<<"Contraseña del Especialista: "<<Contrasena<<endl;
+                cout<<"\t\t\t    Registro Especialista encontrado   "<<endl;
+                cout<<"\t\t\t----------------------------------------"<<endl;
+                cout<<"\n\t\tIdentificacion del Especialista: "<<Id_Esp<<endl;
+                cout<<"\n\t\tNombre del Especialista: "<<Nombre<<endl;
+                cout<<"\n\t\tApellido del Especialista: "<<Apellido<<endl;
+                cout<<"\n\t\tCodigo del Especialista: "<<Cod_Esp<<endl;
+                cout<<"\n\t\tDNI del Especialista: "<<DNI<<endl;
+                cout<<"\n\t\tGenero del Especialista: "<<Genero<<endl;
+                cout<<"\n\t\tOcupacion del Especialista: "<<ocupacion<<endl;
+                cout<<"\n\t\tTelefono del Especialista: "<<Telefono<<endl;
+                cout<<"\n\t\tCorreo del Especialista: "<<Correo<<endl;
+                cout<<"\n\t\tDireccion del Especialista: "<<Direccion<<endl;
+                cout<<"\n\t\tContraseña del Especialista: "<<Contrasena<<endl;
             }
             encontrar>>Id_Esp;
         }
     }
     else{
-        cout<<"No se ha encontrado el archivo...";
+        cout<<"\n\t\tNo se ha encontrado el archivo...";
     }
     encontrar.close();
     system("pause");
+    system("cls");
 }

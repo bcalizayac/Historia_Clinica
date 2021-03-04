@@ -20,18 +20,22 @@ void Enfermero::Registrar_CodEnfermero(int idesp){
     consulta.open("enfermeros.txt",ios::in);
     entrada.open("enfermeros.txt",ios::app);
      if(entrada.fail()&&consulta.fail()){
-        cout<<"No se pudo abrir el archivo"<<endl;
+        cout<<"\n\t\tNo se pudo abrir el archivo"<<endl;
+        system("pause");
+        system("cls");
     }
 
     else{
-        cout<<"\nIngrese el codigo del enfermero: ";
+        cout<<"\n\t\tIngrese el codigo del enfermero: ";
         cin>>codguardado;
     FILE *rv;
     rv = fopen( "enfermeros.txt", "r" );
     fseek( rv, 0, SEEK_END );
     if (ftell( rv ) == 0 )
     {
-        cout<<"Archivo vacio"<<endl;
+        cout<<"\n\t\tArchivo vacio"<<endl;
+        system("pause");
+        system("cls");
     }
     else{
         consulta>>cod_Enf;
@@ -39,7 +43,9 @@ void Enfermero::Registrar_CodEnfermero(int idesp){
                 consulta>>cod_Esp>>area;
             if((cod_Enf==codguardado)){
                 if(cod_Enf==codguardado){
-                cout<<"Ya existe un enfermero con ese codigo...";
+                    cout<<"\n\t\tYa existe un enfermero con ese codigo...";
+                    system("pause");
+                    system("cls");
                 }
                 repetido=true;
                 break;
@@ -54,10 +60,10 @@ void Enfermero::Registrar_CodEnfermero(int idesp){
                 fflush(stdin);
                 cod_Esp=idesp;
                 cod_Enf=codguardado;
-                cout<<"Ingrese el area de trabajo: ";
+                cout<<"\n\t\tIngrese el area de trabajo: ";
                 getline(cin,area);
                 entrada<<cod_Enf<<" "<<cod_Esp<<" "<<area<<endl;
-                cout<<"Se ha registrado la ID del enfermero...";
+                cout<<"\n\t\tSe ha registrado la ID del enfermero...";
                 cant++;
             }
 
@@ -65,29 +71,38 @@ void Enfermero::Registrar_CodEnfermero(int idesp){
         }
         entrada.close();
         consulta.close();
+        system("pause");
+        system("cls");
 }
 void Enfermero::Buscar_Enfermero(){
 ifstream encontrar;
 int cod;
     encontrar.open("enfermeros.txt",ios::in);
-    cout<<"Digite el codigo del enfermero: ";
+    cout<<"\n\t\tDigite el codigo del enfermero: ";
     cin>>cod;
+    system("cls");
     if(encontrar.is_open()){
         encontrar>>cod_Enf;
         while(!encontrar.eof()){
             encontrar>>cod_Esp>>area;
             if(cod_Enf==cod){
-                cout<<"Registro encontrado..."<<endl<<endl;
-                cout<<"Codigo de enfermero: "<<cod_Enf<<endl;
-                cout<<"Codigo de especialista: "<<cod_Esp<<endl;
-                cout<<"Area: "<<area<<endl;
+                cout<<"\t\t\t    Registro encontrado   "<<endl;
+                cout<<"\t\t\t--------------------------"<<endl;
+                cout<<"\n\t\tCodigo de enfermero: "<<cod_Enf<<endl;
+                cout<<"\n\t\tCodigo de especialista: "<<cod_Esp<<endl;
+                cout<<"\n\t\tArea: "<<area<<endl;
+                system("pause");
+                system("cls");
+                Mostrar_Especialista(cod_Esp);
             }
             encontrar>>cod_Enf;
     }
     }
     else{
-        cout<<"No se ha encontrado el archivo...";
+        cout<<"\n\t\tNo se ha encontrado el archivo...";
     }
+        system("pause");
+        system("cls");
      encontrar.close();
 }
 
@@ -102,27 +117,33 @@ void Enfermero::Modificar_Enfermero(){
     auxiliar.open("auxiliar.txt",ios::out);
 	lectura.open("enfermeros.txt",ios::in);
     if(auxiliar.is_open() && lectura.is_open()){
-        cout<<"Ingrese el codigo del enfermero a modificar: "<<endl;
+        cout<<"\n\t\tIngrese el codigo del enfermero a modificar: ";
 		cin>>auxcode;
         lectura>>cod_Enf;
         while(!lectura.eof()){
         lectura>>cod_Esp>>area;
             if(auxcode==cod_Enf){
             encontrado=true;
-                cout<<"1.Area\n2.Salir"<<endl<<endl;
+                cout<<"\n\t\t1.Area\n\t\t2.Salir"<<endl;
+                cout<<"\n\t\tIngrese una opcion: ";
                 cin>>op;
+                system("cls");
                   switch(op){
                       case 1:
                       fflush(stdin);
-                      cout<<"Nueva area: ";
+                      cout<<"\n\t\tNueva area: ";
                       getline(cin,auxarea);
                       auxiliar<<cod_Enf<<" "<<cod_Esp<<" "<<auxarea<<endl;
                       break;
                       case 2:
-                        cout<<"Se reincorporará al menu de pacientes...";
+                        cout<<"\n\t\tSe reincorporará al menu de pacientes...";
+                        system("pause");
+                        system("cls");
                       break;
                       default:
-                       cout<<"Opcion incorrecta...";
+                        cout<<"\n\t\tOpcion incorrecta...";
+                        system("pause");
+                        system("cls");
                       break;
 
                   }
@@ -139,15 +160,20 @@ void Enfermero::Modificar_Enfermero(){
 
     }
     else{
-        cout<<"Archivo no encontrado";
+        cout<<"\n\t\tArchivo no encontrado";
+        system("pause");
+        system("cls");
     }
     if(encontrado==false){
-        cout<<"No se ha encontrado un registro con ese codigo..."<<endl;
+        cout<<"\n\t\tNo se ha encontrado un registro con ese codigo..."<<endl;
+        system("pause");
+        system("cls");
     }
     auxiliar.close();
     lectura.close();
     remove("enfermeros.txt");
     rename("auxiliar.txt","enfermeros.txt");
+    system("cls");
 }
 
 void Enfermero::Listar_Enfermero(){
@@ -156,7 +182,9 @@ void Enfermero::Listar_Enfermero(){
     fseek( rv, 0, SEEK_END );
     if (ftell( rv ) == 0 )
     {
-        cout<<"Archivo vacio"<<endl;
+        cout<<"\n\t\tArchivo vacio"<<endl;
+        system("pause");
+        system("cls");
     }
     else{
     ifstream listarE;
@@ -173,7 +201,9 @@ void Enfermero::Listar_Enfermero(){
             }
     }
     else{
-        cout<<"No se ha encontrado el archivo...";
+        cout<<"\n\t\tNo se ha encontrado el archivo...";
+        system("pause");
+        system("cls");
     }
         cant=i;
     listarE.close();
@@ -195,24 +225,26 @@ void Enfermero::Listar_Enfermero(){
          while(!listarE.eof()){
             listarE>>cod_Esp>>area;
             if(cod_Enf==A[i]){
-                cout<<"Codigo de enfermero: "<<cod_Enf<<endl;
-                cout<<"Codigo de especialista: "<<cod_Esp<<endl;
-                cout<<"Area: "<<area<<endl;
+                cout<<"\n\t\tCodigo de enfermero: "<<cod_Enf<<endl;
+                cout<<"\n\t\tCodigo de especialista: "<<cod_Esp<<endl;
+                cout<<"\n\t\tArea: "<<area<<endl;
                 }
                         listarE>>cod_Enf;
 
             }
     }
     else{
-        cout<<"No se ha encontrado el archivo...";
+        cout<<"\n\t\tNo se ha encontrado el archivo...";
+        system("pause");
+        system("cls");
     }
         i++;
 
      listarE.close();
      }while(i!=cant);
     }
-             system("PAUSE");
-
+            system("PAUSE");
+            system("cls");
 
 
 }

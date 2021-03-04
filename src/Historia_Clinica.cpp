@@ -27,18 +27,22 @@ void Historia_Clinica::Registrar_Historia(){
     consulta.open("historias.txt",ios::in);
     entrada.open("historias.txt",ios::app);
      if(entrada.fail()&&consulta.fail()){
-        cout<<"No se pudo abrir el archivo"<<endl;
+        cout<<"\n\t\tNo se pudo abrir el archivo"<<endl;
+        system("PAUSE");
+        system("cls");
     }
 
     else{
-        cout<<"Codigo de la historia: ";
+        cout<<"\n\t\tCodigo de la historia: ";
         cin>>codguardado;
         FILE *rv;
         rv = fopen( "historias.txt", "r" );
         fseek( rv, 0, SEEK_END );
         if (ftell( rv ) == 0 )
         {
-            cout<<"Archivo vacio"<<endl;
+            cout<<"\n\t\tArchivo vacio"<<endl;
+            system("PAUSE");
+            system("cls");
         }
         else{
         consulta>>N_Hist;
@@ -46,11 +50,14 @@ void Historia_Clinica::Registrar_Historia(){
             consulta>>codPac>>Estado>>fecha;
             if((codguardado==N_Hist)||(codpacg==codPac)){
                 if(codpacg==codPac){
-                cout<<"Ya existe una historia clinica con ese paciente...";
+                cout<<"\n\t\tYa existe una historia clinica con ese paciente...";
+                system("PAUSE");
+                system("cls");
                 }
                 if(codguardado==N_Hist){
-                cout<<"Ya existe una historia clinica con ese codigo..."<<endl;
-
+                cout<<"\n\t\tYa existe una historia clinica con ese codigo..."<<endl;
+                system("PAUSE");
+                system("cls");
                 }
                 repetido=true;
                 break;
@@ -62,10 +69,11 @@ void Historia_Clinica::Registrar_Historia(){
         fflush(stdin);
         N_Hist=codguardado;
         codpacg=codPac;
-        cout<<"Ingrese el estado del paciente: ";
-        cout<<"\n1.Bien\n2Moderado\n3.Grave\n4.Critico"<<endl;
-        cout<< "Opcion: ";
+        cout<<"\n\t\tIngrese el estado del paciente: ";
+        cout<<"\n\t\t1.Bien\n\t\t2Moderado\n\t\t3.Grave\n\t\t4.Critico"<<endl;
+        cout<<"\n\t\tOpcion: ";
         cin>>opE;
+        system("cls");
         switch(opE){
                 case 1:
                     Estado="Bien";
@@ -86,9 +94,9 @@ void Historia_Clinica::Registrar_Historia(){
 
                     }
         fflush(stdin);
-        cout<<"Ingrese la fecha de creación: ";
+        cout<<"\n\t\tIngrese la fecha de creación: ";
         getline(cin,fecha);
-        cout<<"Historia clinica registrada..."<<endl<<endl;
+        cout<<"\n\t\tHistoria clinica registrada..."<<endl<<endl;
 
         entrada<<N_Hist<<" "<<codPac<<" "<<Estado<<" "<<fecha<<endl;
             }
@@ -97,6 +105,7 @@ void Historia_Clinica::Registrar_Historia(){
         }
         consulta.close();
         entrada.close();
+        system("cls");
 
 }
 void Historia_Clinica::Listar_Historia(){
@@ -107,7 +116,9 @@ void Historia_Clinica::Listar_Historia(){
     fseek( rv, 0, SEEK_END );
     if (ftell( rv ) == 0 )
     {
-        cout<<"Archivo vacio"<<endl;
+        cout<<"\n\t\tArchivo vacio"<<endl;
+        system("PAUSE");
+        system("cls");
     }
     else{
     ifstream listarH;
@@ -122,7 +133,9 @@ void Historia_Clinica::Listar_Historia(){
             }
     }
     else{
-        cout<<"No se ha encontrado el archivo...";
+        cout<<"\n\t\tNo se ha encontrado el archivo...";
+        system("PAUSE");
+        system("cls");
     }
         cant=i;
     listarH.close();
@@ -144,17 +157,19 @@ void Historia_Clinica::Listar_Historia(){
          while(!listarH.eof()){
             listarH>>codPac>>Estado>>fecha;
             if(N_Hist==A[i]){
-                cout<<"\n\nN° de historia: "<<N_Hist<<endl;
-                cout<<"Codigo del paciente: "<<codPac<<endl;
-                cout<<"Estado: "<<Estado<<endl;
-                cout<<"Fecha de creación: "<<fecha<<endl;
+                cout<<"\n\n\t\tN° de historia: "<<N_Hist<<endl;
+                cout<<"\t\tCodigo del paciente: "<<codPac<<endl;
+                cout<<"\t\tEstado: "<<Estado<<endl;
+                cout<<"\t\tFecha de creación: "<<fecha<<endl;
                 }
                         listarH>>N_Hist;
 
             }
     }
     else{
-        cout<<"No se ha encontrado el archivo...";
+        cout<<"\n\t\tNo se ha encontrado el archivo...";
+        system("PAUSE");
+        system("cls");
     }
         i++;
 
@@ -162,8 +177,7 @@ void Historia_Clinica::Listar_Historia(){
      }while(i!=cant);
     }
              system("PAUSE");
-
-
+             system("cls");
 
 }
 void Historia_Clinica::Buscar_Historia(int c){
@@ -174,20 +188,25 @@ ifstream encontrar;
         while(!encontrar.eof()){
             encontrar>>codPac>>Estado>>fecha;
             if(N_Hist==c){
-                cout<<"Registro encontrado..."<<endl<<endl;
-                cout<<"Codigo de Historia: "<<N_Hist<<endl;
-                cout<<"Codigo del paciente: "<<codPac<<endl;
-                cout<<"Estado: "<<Estado<<endl;
-                cout<<"Fecha: "<<fecha<<endl;
+                cout<<endl;
+                cout<<"\t\t\t     Registro encontrado    "<<endl<<endl;
+                cout<<"\t\t\t----------------------------"<<endl;
+                cout<<"\n\t\tCodigo de Historia: "<<N_Hist<<endl;
+                cout<<"\t\tCodigo del paciente: "<<codPac<<endl;
+                cout<<"\t\tEstado: "<<Estado<<endl;
+                cout<<"\t\tFecha: "<<fecha<<endl;
             }
             encontrar>>N_Hist;
 
     }
     }
     else{
-        cout<<"No se ha encontrado el archivo...";
+        cout<<"\n\t\tNo se ha encontrado el archivo...";
+        system("cls");
+        system("pause");
     }
      encontrar.close();
+     system("cls");
 }
 void Historia_Clinica::Modificar_Historia(){
     ofstream auxiliar;
@@ -201,57 +220,61 @@ void Historia_Clinica::Modificar_Historia(){
     auxiliar.open("auxiliar.txt",ios::out);
 	lectura.open("historias.txt",ios::in);
     if(auxiliar.is_open() && lectura.is_open()){
-        cout<<"Ingrese el codigo de la historia a modificar: "<<endl;
+        cout<<"\n\t\tIngrese el codigo de la historia a modificar: "<<endl;
 		cin>>auxcodh;
+		system("cls");
         lectura>>N_Hist;
         while(!lectura.eof()){
         lectura>>codPac>>Estado>>fecha;
             if(auxcodh==N_Hist){
-            encontrado=true;
-            Buscar_Historia(auxcodh);
-                cout<<"\n\nElija la opción a modificar: "<<endl<<endl;
-                cout<<"1.Estado\n2.Fecha"<<endl<<endl;
+                encontrado=true;
+                Buscar_Historia(auxcodh);
+                cout<<endl;
+                cout<<"\n\t\t\t   MODIFICAR HISTORIA  "<<endl<<endl;
+                cout<<"\n\t\t\t-----------------------"<<endl;
+                cout<<"\n\t\t1.Estado\n\t\t2.Fecha"<<endl;
+                cout<<"\n\t\tElija la opción a modificar: ";
                 cin>>op;
+                system("cls");
                 switch(op){
                 case 1:
                     fflush(stdin);
-                    cout<<"Estado: "<<endl;
-                    cout<<"1.Bien\n2Moderado\n3.Grave\n4.Critico"<<endl;
-                    cout<<"Opcion: ";
+                    cout<<"\n\t\tEstado: "<<endl;
+                    cout<<"\n\t\t1.Bien\n\t\t2Moderado\n\t\t3.Grave\n\t\t4.Critico"<<endl;
+                    cout<<"\n\t\tOpcion: ";
                     cin>>opE;
+                    system("cls");
                     switch(opE){
-                         case 1:
-                        auxesta="Bien";
-
-                    break;
-                case 2:
-                    auxesta="Moderado";
-
-                    break;
-                case 3:
-                    auxesta="Grave";
-
-                    break;
-                case 4:
-                    auxesta="Critico";
-                    break;
-                    }
-
-
-
+                        case 1:
+                            auxesta="Bien";
+                            break;
+                        case 2:
+                            auxesta="Moderado";
+                            break;
+                        case 3:
+                            auxesta="Grave";
+                            break;
+                        case 4:
+                            auxesta="Critico";
+                            break;
+                            }
                     auxiliar<<N_Hist<<" "<<codPac<<" "<<auxesta<<" "<<fecha<<endl;
                     break;
                 case 2:
                     fflush(stdin);
-                    cout<<"Fecha: ";
+                    cout<<"\n\t\tFecha: ";
                     getline(cin,auxfecha);
                     auxiliar<<N_Hist<<" "<<codPac<<" "<<Estado<<" "<<auxfecha<<endl;
                     break;
                 case 3:
-                    cout<<"Se reincorporará al menu de pacientes...";
+                    cout<<"\n\t\tSe reincorporará al menu de pacientes...";
+                    system("pause");
+                    system("cls");
                     break;
                 default:
-                    cout<<"Opcion incorrecta...";
+                    cout<<"\n\t\tOpcion incorrecta...";
+                    system("pause");
+                    system("cls");
                     break;
                 }
 
@@ -269,15 +292,20 @@ void Historia_Clinica::Modificar_Historia(){
 
     }
     else{
-        cout<<"Archivo no encontrado";
+        cout<<"\n\t\tArchivo no encontrado";
+        system("pause");
+        system("cls");
     }
     if(encontrado==false){
-        cout<<"No se ha encontrado un registro con ese codigo..."<<endl;
+        cout<<"\n\t\tNo se ha encontrado un registro con ese codigo..."<<endl;
+        system("pause");
+        system("cls");
     }
     auxiliar.close();
     lectura.close();
     remove("historias.txt");
     rename("auxiliar.txt","historias.txt");
+    system("cls");
 }
 
 void Historia_Clinica::Eliminar_Paciente(int c){
@@ -286,14 +314,18 @@ void Historia_Clinica::Eliminar_Paciente(int c){
     eliminar.open(("historias.txt"),ios::in);
     entrada.open(("temporal.txt"),ios::out);
     if(eliminar.fail()){
-        cout<<"Existe un error al abrir el archivo...";
+        cout<<"\n\t\tExiste un error al abrir el archivo...";
+        system("pause");
+        system("cls");
     }
     else{
         eliminar>>N_Hist>>codPac;
         while(!eliminar.eof()){
             eliminar>>Estado>>fecha;
             if(codPac==c){
-            cout<<"Historia Clinica Eliminada..."<<endl;
+                cout<<"\n\t\tHistoria Clinica Eliminada..."<<endl;
+                system("pause");
+                system("cls");
             }
             else{
             entrada<<N_Hist<<" "<<codPac<<" "<<Estado<<" "<<fecha<<endl;
@@ -307,5 +339,5 @@ void Historia_Clinica::Eliminar_Paciente(int c){
     eliminar.close();
     remove("historias.txt");
     rename("temporal.txt","historias.txt");
-
+    system("cls");
 }

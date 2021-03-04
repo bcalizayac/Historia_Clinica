@@ -79,7 +79,10 @@ void Medico::Buscar_Medico(){
                 cout<<"\t\t\t--------------------"<<endl<<endl;
                 cout<<"\t\tCodigo de medico: "<<cod_Med<<endl;
                 cout<<"\t\tCodigo de especialista: "<<cod_Esp<<endl;
-                cout<<"\t\tArea: "<<area<<endl;
+                cout<<"\t\tArea: "<<area<<endl<<endl;
+                system("pause");
+                system("cls");
+                Mostrar_Especialista(cod_Esp);
             }
             encontrar>>cod_Med;
         }
@@ -112,7 +115,7 @@ void Medico::Modificar_Medico(){
                 cout<<"\n\n\t\t1.Area\t\t2.Salir";
                 cout<<"\n\t\tIngrese una opcion: ";
                 cin>>op;
-                system("cls")
+                system("cls");
                 switch(op){
                     case 1:
                         fflush(stdin);
@@ -174,6 +177,7 @@ void Medico::Listar_Medico(){
         else{
             cout<<"\n\n\t\tNo se ha encontrado el archivo..."<<endl;
             system("pause");
+            system("cls");
         }
         cant=i;
         listarE.close();
@@ -203,12 +207,13 @@ void Medico::Listar_Medico(){
                 }
             }
             else{
-                cout<<"No se ha encontrado el archivo...";
+                cout<<"\n\t\tNo se ha encontrado el archivo...";
             }
             i++;
             listarE.close();
         }while(i!=cant);
     }
-    system("PAUSE");
+    system("pause");
+    system("cls");
 }
 

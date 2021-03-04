@@ -34,18 +34,18 @@ int main()
         system("cls");
         switch (v){
             case 1:
-                cout<<"\t\t-------------------------------------------------------"<<endl;
-                cout<<"\t\t-                MENU DE ESPECIALISTAS                -"<<endl;
-                cout<<"\t\t-------------------------------------------------------"<<endl;
-                cout<<"\t1.Registrar Especialista"<<endl;
-                cout<<"\t2.Listar Especialista"<<endl;
-                cout<<"\t3.Mostrar Especialista"<<endl;
-                cout<<"\t4.Modificar Datos del Especialista"<<endl;
-                cout<<"\t5.Buscar Especialista"<<endl;
-                cout<<"\t6.Medico"<<endl;
-                cout<<"\t7.Enfermero"<<endl;
-                cout<<"\t8.Salir"<<endl;
-                cout<<"\tIngrese una opcion: ";
+                cout<<"\t\t\t-------------------------------------------------------"<<endl;
+                cout<<"\t\t\t-                MENU DE ESPECIALISTAS                -"<<endl;
+                cout<<"\t\t\t-------------------------------------------------------"<<endl;
+                cout<<"\n\t\t1.Registrar Especialista"<<endl;
+                cout<<"\t\t2.Listar Especialista"<<endl;
+                cout<<"\t\t3.Mostrar Especialista"<<endl;
+                cout<<"\t\t4.Modificar Datos del Especialista"<<endl;
+                cout<<"\t\t5.Buscar Especialista"<<endl;
+                cout<<"\t\t6.Medico"<<endl;
+                cout<<"\t\t7.Enfermero"<<endl;
+                cout<<"\t\t8.Salir"<<endl;
+                cout<<"\t\tIngrese una opcion: ";
                 cin>>opc;
                 system("cls");
                 switch( opc ){
@@ -66,7 +66,7 @@ int main()
                                 if((ObjEsp.getValidado())==true){
                                     ObjMed.Registrar_CodMedico(auxcode);
                                 }
-
+                                system("cls");
                                 break;
                             case 2:
                                 cout<<"\n\n\t\tEscriba el codigo del especialista: ";
@@ -75,8 +75,12 @@ int main()
                                 if((ObjEsp.getValidado())==true){
                                     ObjEnf.Registrar_CodEnfermero(auxcode);
                                 }
+                                system("cls");
                                 break;
                             default:
+                                cout<<"\n\t\tDato Incorrecto"<<endl;
+                                system("pause");
+                                system("cls");
                                 break;
                         }
                         break;
@@ -93,75 +97,33 @@ int main()
                     case 5:
                         break;
                     case 6:
-                        break;
-                    case 7:
                         do{
-                            cout<<"MENU DE ENFERMEROS"<<endl<<endl;
-                            cout<<"\n1.Listar\n2.Buscar\n3.Modificar\n4.Pacientes\n5.Salir"<<endl;
-                            cin>>opE;
-                            switch(opE){
-                                case 1:
-                                    ObjEnf.Listar_Enfermero();
-                                    break;
-                                case 2:
-                                    ObjEnf.Buscar_Enfermero();
-                                    break;
-                                case 3:
-                                    ObjEnf.Modificar_Enfermero();
-                                    break;
-                                case 4:
-                                    break;
-                            }
-                        }while(opE!=5);
-                        break;
-                    case 8:
-                        jr=1;
-                        break;
-                    default:
-                        cout<<"DATO ERRONEO";
-                }
-                system("cls");
-                break;
-            case 2:
-
-                do{
-                    int im=0;
-                    cout<<"\t\t\t------------------------------------------------"<<endl;
-                    cout<<"\t\t\t-           Menu de Inicio de Sesion           -"<<endl;
-                    cout<<"\t\t\t------------------------------------------------"<<endl;
-                    cout<<"\n\t\t1.Inicio de Sesion Medico"<<endl;
-                    cout<<"\t\t2.Inicio de Sesion Enfermero/a"<<endl;
-                    cout<<"\t\t3.Volver al Menu Principal"<<endl;
-                    cout<<"\t\tElija una opcion: ";
-                    cin>>ww;
-                    system("cls");
-                    switch(ww){
-                        case 1:
-                            do{
-                                im=objIS.LogearMedico(im, ww);
-                            }while(im==0);
-                            do{
                             cout<<endl;
                             cout<<"\t\t\t----------------------------"<<endl;
                             cout<<"\t\t\t-      MENU DE MEDICOS     -"<<endl;
                             cout<<"\t\t\t----------------------------"<<endl;
-                            cout<<"\n1.Listar\n2.Buscar\n3.Modificar\n4.Pacientes\n5.Salir"<<endl;
+                            cout<<"\n\t\t1.Listar\n\t\t2.Buscar\n\t\t3.Modificar\n\t\t4.Pacientes\n\t\t5.Salir"<<endl;
+                            cout<<"\n\t\tIngrese una opcion: ";
                             cin>>opE;
                             switch(opE){
                                 case 1:
-                                    ObjEnf.Listar_Enfermero();
+                                    ObjMed.Listar_Medico();
                                     break;
                                 case 2:
-                                    ObjEnf.Buscar_Enfermero();
+                                    ObjMed.Buscar_Medico();
                                     break;
                                 case 3:
-                                    ObjEnf.Modificar_Enfermero();
+                                    ObjMed.Modificar_Medico();
                                     break;
                                 case 4:
                                     do{
-                                        cout<<"MENÚ DE PACIENTES"<<endl<<endl;
-                                        cout<<"1.Listar\n2.Buscar\n3.Modificar\n4.Eliminar\n5.Historia Clinica\n6.Salir"<<endl;
+                                        cout<<"\t\t\t-----------------------------------"<<endl;
+                                        cout<<"\t\t\t-        MENU DE PACIENTES        -"<<endl;
+                                        cout<<"\t\t\t-----------------------------------"<<endl;
+                                        cout<<"\n\t\t1.Listar\n\t\t2.Buscar\n\t\t3.Modificar\n\t\t4.Eliminar\n\t\t5.Historia Clinica\n\t\t6.Salir"<<endl;
+                                        cout<<"\n\t\tIngrese una opcion: ";
                                         cin>>opP;
+                                        system("cls");
                                         switch(opP+1){
                                             case 1:
                                                 break;
@@ -185,31 +147,176 @@ int main()
                                                 break;
                                             case 6:
                                                 do{
-                                                    cout<<"MENU DE HISTORIAS CLINICAS"<<endl<<endl;
-                                                    cout<<"\n1.Listar Historias\n2.Buscar Historia\n3.Modificar Historia\n4.Salir"<<endl;
+                                                    cout<<"\t\t\t------------------------------------"<<endl;
+                                                    cout<<"\t\t\t-    MENU DE HISTORIAS CLINICAS    -"<<endl;
+                                                    cout<<"\t\t\t------------------------------------"<<endl;
+                                                    cout<<"\n\t\t1.Listar Historias\n\t\t2.Buscar Historia\n\t\t3.Modificar Historia\n\t\t4.Salir"<<endl;
+                                                    cout<<"\n\t\tIngrese una opcion: ";
                                                     cin>>opH;
                                                     ObjPac.Historia_Clin(opH+1);
+                                                    system("cls");
                                                 }while(opH!=6);
                                                 break;
                                             case 7:
                                                 cout<<"Ha salido del programa...";
+                                                system("pause");
+                                                system("cls");
                                                 break;
                                             default:
                                                 break;
                                         }
                                     }while(opP!=7);
                                     break;
+                                    system("cls");
                                 }
                             }while(opE!=5);
+                            system("cls");
+                        break;
+                    case 7:
+                        do{
+                            cout<<endl;
+                            cout<<"\t\t\t---------------------------"<<endl;
+                            cout<<"\t\t\t-    MENU DE ENFERMEROS   -"<<endl;
+                            cout<<"\t\t\t---------------------------"<<endl;
+                            cout<<"\n\t\t1.Listar\n\t\t2.Buscar\n\t\t3.Modificar\n\t\t4.Pacientes\n\t\t5.Salir"<<endl;
+                            cout<<"\n\t\tIngrese una opcion: ";
+                            cin>>opE;
+                            system("cls");
+                            switch(opE){
+                                case 1:
+                                    ObjEnf.Listar_Enfermero();
+                                    break;
+                                case 2:
+                                    ObjEnf.Buscar_Enfermero();
+                                    break;
+                                case 3:
+                                    ObjEnf.Modificar_Enfermero();
+                                    break;
+                                case 4:
+                                    break;
+                            }
+                        }while(opE!=5);
+                        break;
+                    case 8:
+                        jr=1;
+                        break;
+                    default:
+                        cout<<"DATO ERRONEO";
+                        system("pause");
+                        system("cls");
+                }
+                system("cls");
+                break;
+            case 2:
+
+                do{
+                    int im=0;
+                    cout<<"\t\t\t------------------------------------------------"<<endl;
+                    cout<<"\t\t\t-           Menu de Inicio de Sesion           -"<<endl;
+                    cout<<"\t\t\t------------------------------------------------"<<endl;
+                    cout<<"\n\t\t1.Inicio de Sesion Medico"<<endl;
+                    cout<<"\t\t2.Inicio de Sesion Enfermero/a"<<endl;
+                    cout<<"\t\t3.Volver al Menu Principal"<<endl;
+                    cout<<"\t\tElija una opcion: ";
+                    cin>>ww;
+                    system("cls");
+                    switch(ww){
+                        case 1:
+                            do{
+                                im=objIS.LogearMedico(im, ww);
+                            }while(im==0);
+                            cout<<endl;
+                            system("cls");
+                            do{
+                            cout<<endl;
+                            cout<<"\t\t\t----------------------------"<<endl;
+                            cout<<"\t\t\t-      MENU DE MEDICOS     -"<<endl;
+                            cout<<"\t\t\t----------------------------"<<endl;
+                            cout<<"\n\t\t1.Listar\n\t\t2.Buscar\n\t\t3.Modificar\n\t\t4.Pacientes\n\t\t5.Salir"<<endl;
+                            cout<<"\n\t\tIngrese una opcion: ";
+                            cin>>opE;
+                            switch(opE){
+                                case 1:
+                                    ObjMed.Listar_Medico();
+                                    break;
+                                case 2:
+                                    ObjMed.Buscar_Medico();
+                                    break;
+                                case 3:
+                                    ObjMed.Modificar_Medico();
+                                    break;
+                                case 4:
+                                    do{
+                                        cout<<"\t\t\t-----------------------------------"<<endl;
+                                        cout<<"\t\t\t-        MENU DE PACIENTES        -"<<endl;
+                                        cout<<"\t\t\t-----------------------------------"<<endl;
+                                        cout<<"\n\t\t1.Listar\n\t\t2.Buscar\n\t\t3.Modificar\n\t\t4.Eliminar\n\t\t5.Historia Clinica\n\t\t6.Salir"<<endl;
+                                        cout<<"\n\t\tIngrese una opcion: ";
+                                        cin>>opP;
+                                        system("cls");
+                                        switch(opP+1){
+                                            case 1:
+                                                break;
+                                            case 2:
+                                                ObjPac.Listar_Paciente();
+                                                system("PAUSE");
+                                                break;
+                                            case 3:
+                                                cout<<"Ingrese el codigo del paciente que desea mostrar...";
+                                                cin>>codP;
+                                                ObjPac.Encontrar_Paciente(codP);
+                                                system("PAUSE");
+                                                break;
+                                            case 4:
+                                                ObjPac.Modificar_Paciente();
+                                                system("PAUSE");
+                                                break;
+                                            case 5:
+                                                ObjPac.Eliminar_Paciente();
+                                                system("PAUSE");
+                                                break;
+                                            case 6:
+                                                do{
+                                                    cout<<"\t\t\t------------------------------------"<<endl;
+                                                    cout<<"\t\t\t-    MENU DE HISTORIAS CLINICAS    -"<<endl;
+                                                    cout<<"\t\t\t------------------------------------"<<endl;
+                                                    cout<<"\n\t\t1.Listar Historias\n\t\t2.Buscar Historia\n\t\t3.Modificar Historia\n\t\t4.Salir"<<endl;
+                                                    cout<<"\n\t\tIngresa una opcion: ";
+                                                    cin>>opH;
+                                                    system("cls");
+                                                    ObjPac.Historia_Clin(opH+1);
+                                                    system("cls");
+                                                }while(opH!=6);
+                                                break;
+                                            case 7:
+                                                cout<<"Ha salido del programa...";
+                                                system("pause");
+                                                system("cls");
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }while(opP!=7);
+                                    break;
+                                    system("cls");
+                                }
+                            }while(opE!=5);
+                            system("cls");
                             break;
                         case 2:
                             do{
                                 im=objIS.LogearMedico(im, ww);
                             }while(im==0);
+                            cout<<endl;
+                            system("cls");
                             do{
-                                cout<<"MENÚ DE PACIENTES"<<endl<<endl;
-                                cout<<"1.Registrar\n2.Listar\n3.Buscar\n4.Modificar\n5.Eliminar\n6.Historia Clinica\n7.Salir"<<endl;
+                                cout<<"\t\t\t--------------------------"<<endl;
+                                cout<<"\t\t\t-   MENU DE PACIENTES    -"<<endl;
+                                cout<<"\t\t\t--------------------------"<<endl;
+                                cout<<"\n\t\t1.Registrar\n\t\t2.Listar\n\t\t3.Buscar\n\t\t4.Modificar\n\t\t5.Eliminar\n\t\t6.Historia Clinica\n\t\t7.Salir"<<endl;
+                                cout<<"\n\t\tIngrese una opcion: ";
                                 cin>>opP;
+                                system("cls");
                                 switch(opP){
                                     case 1:
                                         ObjPac.Registrar_Paciente();
@@ -235,25 +342,35 @@ int main()
                                         break;
                                     case 6:
                                         do{
-                                            cout<<"MENU DE HISTORIAS CLINICAS"<<endl<<endl;
-                                            cout<<"1.Registrar Historia\n2.Listar Historias\n3.Buscar Historia\n4.Modificar Historia\n6.Salir"<<endl;
+                                            cout<<"\t\t\t------------------------------------"<<endl;
+                                            cout<<"\t\t\t-    MENU DE HISTORIAS CLINICAS    -"<<endl;
+                                            cout<<"\t\t\t------------------------------------"<<endl;
+                                            cout<<"\n\t\t1.Registrar Historia\n\t\t2.Listar Historias\n\t\t3.Buscar Historia\n\t\t4.Modificar Historia\n\t\t6.Salir"<<endl;
+                                            cout<<"\n\t\tIngrese una opcion: ";
                                             cin>>opH;
                                             ObjPac.Historia_Clin(opH);
+                                            system("cls");
                                         }while(opH!=6);
                                         break;
                                     case 7:
-                                        cout<<"Ha salido del programa...";
+                                        cout<<"\n\t\tHa salido del programa...";
+                                        system("cls");
                                         break;
                                     default:
                                         break;
                                     }
                                 }while(opP!=7);
+                                break;
+                        case 3:
+                            vm=1;
                             break;
                         default:
-                            cout<<"Dato Incorrecto"<<endl;
-                            break;
-
+                                cout<<"\n\t\tDato Incorrecto"<<endl;
+                                system("pause");
+                                system("cls");
+                                break;
                     }
+                    system("cls");
                 }while(vm==0);
                 break;
             default:
