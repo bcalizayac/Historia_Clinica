@@ -28,14 +28,14 @@ void Especialista::setcodEsp(int c){
 Cod_Esp=c;
 }
 
-void Especialista :: Registrar_Especialista(int cod,int codeesp, int &cmed){
+void Especialista :: Registrar_Especialista(int cod,int codeesp){
 int pc, vw=0;
     bool a;
     ifstream espci;
     ofstream esp;
     ofstream contrasena;
     char aux;
-    contrasena.open("contraseñas.txt",ios::out);
+    contrasena.open("contraseñas.txt",ios::app);
     espci.open("especialistas.txt", ios::in);
     esp.open("especialistas.txt", ios::app);
     if(espci.fail()&&esp.fail()&&(contrasena.fail())){
@@ -114,13 +114,43 @@ int pc, vw=0;
             fflush(stdin);
             cout<<"\t\tIngrese la Contrase"<<char(164)<<"a: ";
             getline(cin,Contrasena);
-            contrasena<<Id_Esp<<" "<<Contrasena;
+            contrasena<<Id_Esp<<" "<<Contrasena<<" "<<Cod_Esp<<endl;
             esp<<Id_Esp<<" "<<Nombre<<" "<<Apellido<<" "<<Cod_Esp<<" "<<DNI<<" "<<Genero<<" "<<ocupacion<<" "<<Telefono<<" "<<Correo<<" "<<Direccion<<" "<<Contrasena<<endl;
-            cmed++;
         }
     }
     vw=0;
     contrasena.close();
     espci.close();
     esp.close();
+}
+
+void Especialista :: Mostrar_Especialista(int c){
+    ifstream encontrar;
+    encontrar.open("especialistas.txt",ios::in);
+    if(encontrar.is_open()){
+        encontrar>>Id_Esp;
+        while(!encontrar.eof()){
+            encontrar>>Nombre>>Apellido>>Cod_Esp>>DNI>>Genero>>ocupacion>>Telefono>>Correo>>Direccion>>Contrasena;
+            if(Id_Esp==c){
+                cout<<"Registro encontrado..."<<endl<<endl;
+                cout<<"Identificacion del Especialista: "<<Id_Esp<<endl;
+                cout<<"Nombre del Especialista: "<<Nombre<<endl;
+                cout<<"Apellido del Especialista: "<<Apellido<<endl;
+                cout<<"Codigo del Especialista: "<<Cod_Esp<<endl;
+                cout<<"DNI del Especialista: "<<DNI<<endl;
+                cout<<"Genero del Especialista: "<<Genero<<endl;
+                cout<<"Ocupacion del Especialista: "<<ocupacion<<endl;
+                cout<<"Telefono del Especialista: "<<Telefono<<endl;
+                cout<<"Correo del Especialista: "<<Correo<<endl;
+                cout<<"Direccion del Especialista: "<<Direccion<<endl;
+                cout<<"Contraseña del Especialista: "<<Contrasena<<endl;
+            }
+            encontrar>>Id_Esp;
+        }
+    }
+    else{
+        cout<<"No se ha encontrado el archivo...";
+    }
+    encontrar.close();
+    system("pause");
 }

@@ -22,14 +22,14 @@ class Especialista{
         string Contrasena;
     public:
         Especialista();
-        void Registrar_Especialista(int ,int, int &);
+        void Registrar_Especialista(int ,int);
         int getId_Esp();
         void setId_Esp(int);
         bool getValidado();
         void setValidado(bool);
         void setcodEsp(int);
         void Listar_Especialista(int );
-        void Mostrar_Especialista();
+        void Mostrar_Especialista(int );
         void Modificar_Especialista();
 };
 

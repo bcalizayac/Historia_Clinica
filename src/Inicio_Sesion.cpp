@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <iomanip>
 #include <fstream>
+#include <cstring>
 
 
 #define ENTER 13
@@ -36,9 +37,9 @@ int Inicio_Sesion :: Verificar_Usuario(int is){
 			if (caracter != BACKSPACE){
 				Contra.push_back(caracter);
 				cout << "*";
-			} else {
-				if (Contra.length() > 0) {
-					cout << "\b \b";
+			} else{
+				if(Contra.length() > 0) {
+                    cout << "\b \b";
 					Contra = Contra.substr(0, Contra.length() - 1);
 				}
 			}
@@ -76,7 +77,8 @@ int Inicio_Sesion :: LogearMedico(int im, int op){
                 if (caracter != BACKSPACE){
                     contm.push_back(caracter);
                     cout << "*";
-                } else {
+                }
+                else {
                     if (contm.length() > 0) {
                         cout << "\b \b";
                         contm = contm.substr(0, contm.length() - 1);
@@ -95,12 +97,15 @@ int Inicio_Sesion :: LogearMedico(int im, int op){
                 cout<<"Archivo vacio"<<endl;
             }
             else{
+                contrasena>>codmed;
                 while(!contrasena.eof())
                 {
-                    contrasena>>codmed>>contmed;
+                    contrasena>>contmed>>ces;
                     if(codmed==codm){
                         if(contmed==contm){
-                            im=1;
+                            if(ces==1){
+                                im=1;
+                            }
                         }
                     }
                     contrasena>>codmed;
@@ -115,7 +120,7 @@ int Inicio_Sesion :: LogearMedico(int im, int op){
             cout<<"\t\t----------------------------------------"<<endl;
             cout<<"\t\t-     Inicio de Sesion de Enfermero    -"<<endl;
             cout<<"\t\t----------------------------------------"<<endl;
-            cout<<"\n\n\tIngrese el Codigo de Medico: ";
+            cout<<"\n\n\tIngrese el Codigo de Enfermero: ";
             fflush(stdin);
             cin>>code;
             char caracter;
@@ -139,25 +144,29 @@ int Inicio_Sesion :: LogearMedico(int im, int op){
             ifstream contrasena;
             contrasena.open("contraseñas.txt", ios::in);
             FILE *rv;
-                rv = fopen( "contraseñas.txt", "r" );
-                fseek( rv, 0, SEEK_END );
-                if (ftell( rv ) == 0 )
+            rv = fopen( "contraseñas.txt", "r" );
+            fseek( rv, 0, SEEK_END );
+            if (ftell( rv ) == 0 )
+            {
+                cout<<"\n\n\t\tArchivo vacio"<<endl;
+            }
+
+            else{
+                contrasena>>codenf;
+                while(!contrasena.eof())
                 {
-                    cout<<"Archivo vacio"<<endl;
-                }
-                else{
-                    while(!contrasena.eof())
-                    {
-                        contrasena>>codenf>>contenf;
-                        if(codenf==code){
-                            if(contenf==conte){
+                    contrasena>>contenf>>ces;
+                    if(codenf==code){
+                        if(contenf==conte){
+                            if(ces==2){
                                 im=1;
                             }
                         }
-                        contrasena>>codmed;
                     }
+                    contrasena>>codenf;
                 }
-                contrasena.close();
+            }
+            contrasena.close();
             system("cls");
         }while(im==0);
     }

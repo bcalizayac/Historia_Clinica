@@ -17,6 +17,7 @@ class Inicio_Sesion
         string contmed;
         int codenf;
         string contenf;
+        int ces;
     public:
         Inicio_Sesion();
         int Verificar_Usuario(int);

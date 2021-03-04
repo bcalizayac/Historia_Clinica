@@ -452,7 +452,7 @@ void Paciente::Modificar_Paciente(){
                                 cin>>auxdniap;
                                 aux<<codigo<<" "<<Nombres<<" "<<Apellidos<<" "<<edad<<" "<<DNI<<" "<<Genero<<" "<<masa<<" "<<Talla<<" "<<Tipo_Sangre<<" "<<Nacimiento<<" "<<Nom_Ap<<" "<<Apell_Ap<<" "<<auxdniap<<" "<<Parentesco_Ap<<endl;
                                 system("PAUSE");
-                            break;
+                            break;w
 
                             case 13:
                                 cout<<"Parentesco del apoderado: ";

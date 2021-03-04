@@ -161,3 +161,100 @@
 	<fstream>
 	"Especialista.h"
 
+1614652864 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\src\enfermero.cpp
+	"Enfermero.h"
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614649594 c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\include\enfermero.h
+	"Especialista.h"
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614830264 c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\include\especialista.h
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614652439 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\src\historia_clinica.cpp
+	"Historia_Clinica.h"
+	<fstream>
+	"Paciente.h"
+	<string>
+	<string.h>
+	<iostream>
+
+1614546539 c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\include\historia_clinica.h
+	<iostream>
+	<string>
+	<fstream>
+
+1614544033 c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\include\paciente.h
+	<string>
+	<iostream>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614844353 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\src\inicio_sesion.cpp
+	"Inicio_Sesion.h"
+	<iostream>
+	<conio.h>
+	<string>
+	<string.h>
+	<cstdlib>
+	<iomanip>
+	<fstream>
+	<cstring>
+
+1614845456 c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\include\inicio_sesion.h
+	<iostream>
+	<string>
+	<string.h>
+	<fstream>
+	"Especialista.h"
+
+1614652439 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\src\paciente.cpp
+	"Paciente.h"
+	<string>
+	<string.h>
+	<iostream>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614844681 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\main.cpp
+	<iostream>
+	"Paciente.h"
+	"Enfermero.h"
+	"Especialista.h"
+	"Medico.h"
+	"Inicio_Sesion.h"
+	<string>
+	<string.h>
+	<fstream>
+	"Historia_Clinica.h"
+
+1614707562 c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\include\medico.h
+	"Especialista.h"
+	<iostream>
+
+1614825592 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\src\medico.cpp
+	"Medico.h"
+	<fstream>
+	<string>
+	<string.h>
+	<iostream>
+
+1614845107 source:c:\users\bruno\desktop\p.a\historia_clinica\historia_clinica\src\especialista.cpp
+	"Especialista.h"
+	"Enfermero.h"
+	<iostream>
+	<string>
+	<string.h>
+	<fstream>
+	"Historia_Clinica.h"
+
